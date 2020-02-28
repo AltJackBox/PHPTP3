@@ -1,7 +1,7 @@
 <!-- récolte des informations de l'API en PHP -->
 
 <?php
-    require_once("utils.php");
+    require_once("../utils/utils.php");
 
     if (!isset($_GET['id_film']) || $_GET['id_film'] == '') {
         //On a pas le paramètre get pour l'id du film, on redirige donc l'user. 
@@ -31,6 +31,8 @@
 
     //Les informations supplémentaires.
     $poster = 'https://image.tmdb.org/t/p/original'.$movie_info[$lang[0]]["poster_path"];
+    // pour les autres configurations :
+    // http://api.themoviedb.org/3/configuration?api_key=ebb02613ce5a2ae58fde00f4db95a9c1
 ?>
 
 <!-- Affichage de la page avec les informations obtenues -->
@@ -39,7 +41,7 @@
     <head>
         <meta charset="utf-8">
         <title><?= $title ?></title>
-        <link rel="stylesheet" href="details_style.css">
+        <link rel="stylesheet" href="../utils/details_style.css">
     </head>
 
     <body>
