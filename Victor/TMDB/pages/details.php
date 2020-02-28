@@ -31,6 +31,7 @@
 
     //Les informations supplémentaires.
     $poster = 'https://image.tmdb.org/t/p/original'.$movie_info[$lang[0]]["poster_path"];
+    $ytb_link = get_trailer_link($id_film);
     // pour les autres configurations :
     // http://api.themoviedb.org/3/configuration?api_key=ebb02613ce5a2ae58fde00f4db95a9c1
 ?>
@@ -40,11 +41,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><?= $title ?></title>
+        <title><?= $movie_info[$lang[0]]["title"] ?></title>
         <link rel="stylesheet" href="../utils/details_style.css">
     </head>
 
     <body>
+        <h1><?= $movie_info[$lang[0]]["title"] ?></h1>
+        <!-- affiche -->
+        <img src="<?=$poster?>"/>
         <table>
             <thead>
                 <tr> <th>VO</th> <th>EN</th> <th>VF</th> </tr>
@@ -70,7 +74,9 @@
                 ?>
             </tbody>
         </table>
-        <!-- affiche -->
-        <img src="<?=$poster?>"/>
-    </body>
+        <!-- trailer -->
+        <?php if ($ytb_link != "") { ?>
+        <iframe width="560" height="315" src="<?=$ytb_link?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <?php } ?>
+        </body>
 </html>

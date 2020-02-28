@@ -27,7 +27,7 @@
                         $id = $infos["id"];
                         $link = "details.php?id_film=$id";
                         $release_date = $infos["release_date"];
-                        $title = $infos["original_title"];
+                        $title = $infos["title"];
                         echo("<tr> <td><a href='$link'>$id<a></td> <td>$release_date</td> <td>$title</td> </tr>");
                     }
                 ?>

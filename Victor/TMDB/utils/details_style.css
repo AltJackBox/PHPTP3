@@ -1,8 +1,18 @@
 
 img {
-    width: 33%;
-    height: auto;
-    margin: 0 33% 0 33%;
+    height: 50%;
+    width: auto;
+    display : block;
+    margin: auto;
+}
+
+iframe {
+    display : block;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
 }
 
 table {
