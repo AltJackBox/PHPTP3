@@ -1,0 +1,32 @@
+span.titre {
+    color: #f00;
+}
+
+table {
+    border : 1px solid black;
+}
+
+a, ul {
+    color: green;
+    text-decoration: none; 
+}
+
+ul {
+    font-weight: bold;
+}
+
+td {
+    border : 1px solid black;
+    border-collapse: collapse;
+    padding : 1em;
+}
+
+
+
+tr.surlignee {
+    background-color: yellow;
+}
+
+tr.normale {
+    background-color: white;
+}
