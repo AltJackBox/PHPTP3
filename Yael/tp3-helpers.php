@@ -35,3 +35,16 @@ function smartcurl($url) {
     curl_close($ch);
     return [$rawcontent, $info];
 }
+
+/*Fonctions ajoutées*/
+
+function tmdbsearch($urlcomponent, $params=null) {
+    $apikey = 'ebb02613ce5a2ae58fde00f4db95a9c1';
+    $apiprefix = 'https://api.themoviedb.org/3/search/movie';  //3rd API version
+	
+	$targeturl = $apiprefix . $urlcomponent . '?api_key=' . $apikey;
+    $targeturl .= (isset($params) ? '&' . http_build_query($params) : '');
+    list($content, $info) = smartcurl($targeturl);
+
+    return $content;
+}
