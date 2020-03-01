@@ -26,11 +26,10 @@
             </thead>
             <tbody>
                 <?php
-                    foreach($TLOR_actors_info as $i => $infos) {
+                    foreach($TLOR_actors_info as $id_act => $infos) {
                         $actor = $infos["act_name"];
                         $character = $infos["char_name"];
                         $occured = $infos["nb_occ"];
-                        $id_act = $infos["id_act"];
                         echo("<tr> <td><a href='actor_details.php?id_act=$id_act'>$actor</a></td> <td>$character</td> <td>$occured</td> </tr>");
                     }
                 ?>

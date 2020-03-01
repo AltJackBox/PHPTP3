@@ -75,7 +75,7 @@
     /**
      * Return minimal infos about actors in TLOR, in an array
      * @param array $film_ids contains all the films' ids
-     * @return array TLOR_actors(actor_id => array(id_act, act_name, char_name, nb_occ), actor_id => ... )
+     * @return array TLOR_actors(actor_id => array(act_name, char_name, nb_occ), actor_id => ... )
      */
     function get_TLOR_actors_info($film_ids) {
         //http://api.themoviedb.org/3/movie/120/credits?api_key=ebb02613ce5a2ae58fde00f4db95a9c1
@@ -87,7 +87,7 @@
                 if (isset($TLOR_actors[$cast['id']])) {
                     $TLOR_actors[$cast['id']]['nb_occ']++;
                 } else {
-                    $insert = array("id_act"=>$cast["id"], "act_name"=>$cast["name"], "char_name"=>$cast["character"], "nb_occ"=>1);
+                    $insert = array("act_name"=>$cast["name"], "char_name"=>$cast["character"], "nb_occ"=>1);
                     $TLOR_actors[$cast['id']] = $insert;
                 }
             }
